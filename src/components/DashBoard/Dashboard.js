@@ -95,11 +95,13 @@ export default function Dashboard({ code }) {
           />
         ))}
         {searchResults.length === 0 && (
-          <div
-            className="text-center"
-            style={{ whiteSpace: "pre", color: "#fff" }}
-          >
-            {lyrics}
+          <div className="mid-content">
+            <div
+              className="text-center col-6"
+              style={{ whiteSpace: "pre", color: "#fff" }}
+            >
+              {lyrics}
+            </div>
           </div>
         )}
       </div>
