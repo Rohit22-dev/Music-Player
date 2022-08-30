@@ -8,7 +8,7 @@ export default function useAuth(code) {
 
   useEffect(() => {
     axios
-      .post(`http://localhost:5000/login`, { code })
+      .post(`https://spotify-music-server.herokuapp.com/login`, { code })
       .then((res) => {
         setAccessToken(res.data.accessToken);
         setRefreshToken(res.data.refreshToken);
@@ -24,7 +24,7 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return;
     const interval = setInterval(() => {
       axios
-        .post("http://localhost:5000/refresh", {
+        .post("https://spotify-music-server.herokuapp.com/refresh", {
           refreshToken,
         })
         .then((res) => {
